@@ -1,3 +1,4 @@
+import axios from "axios";
 import { create } from "zustand";
 
 export const useStore = create((set) => ({
@@ -11,6 +12,18 @@ export const useStore = create((set) => ({
       set({ data: users });
     } catch (error) {
       console.error("Error fetching data:", error);
+    }
+  },
+  postdata: async (input) => {
+    try {
+      const res = await axios.post(
+        "https://jsonplaceholder.typicode.com/users",
+        { name: input }
+      );
+      // set({ data: [res.data] });
+      return res.data;
+    } catch (error) {
+      console.log("Error", error);
     }
   },
 }));
