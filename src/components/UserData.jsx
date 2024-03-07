@@ -12,9 +12,9 @@ function UserData() {
       {data.map((user) => (
         <>
           <li key={user.id}>
-            {user.firstName} {user.lastName}
+            Name: {user.firstName} {user.lastName} 
+            <br />Age: {user.age}
           </li>
-          <li>{user.age}</li>
         </>
       ))}
     </div>
