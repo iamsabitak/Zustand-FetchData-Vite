@@ -6,6 +6,7 @@ function UserData() {
  const { fetchdata, data } = useStore();
  useEffect(() => {
    fetchdata();
+ // eslint-disable-next-line react-hooks/exhaustive-deps
  }, []);
  return (
    <div>
